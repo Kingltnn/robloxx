@@ -6,7 +6,7 @@ local function serverhop(player)
     task.wait(timeToWait)
 
     local success, _ = pcall(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/fdvll/pet-simulator-99/main/serverhop.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Kingltnn/robloxx/main/serverhop.lua"))()
     end)
 
     if not success then
