@@ -1,4 +1,4 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/fdvll/pet-simulator-99/main/waitForGameLoad.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Kingltnn/robloxx/main/waitForGameLoad.lua"))()
 
 local Workspace = game:GetService("Workspace")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
