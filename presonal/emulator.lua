@@ -7,21 +7,7 @@ getgenv().autoDigsiteConfig = {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-print("Made By firedevil (Ryan | 404678244215029762 | https://discord.gg/ettP4TjbAb)")
+print("|Made By  KingLTN | discord: king_ltnn |")
 
 repeat
     task.wait()
@@ -29,7 +15,7 @@ until game:IsLoaded()
 
 task.wait(5)
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/fdvll/pet-simulator-99/main/antiStaff.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Kingltnn/robloxx/main/antiStaff.lua"))()
 
 game.Players.LocalPlayer.PlayerScripts.Scripts.Core["Idle Tracking"].Enabled = false
 
@@ -60,7 +46,7 @@ if not game:GetService("Workspace").__THINGS.__INSTANCE_CONTAINER.Active:FindFir
             print(tostring(loaded))
             print("Game not loaded, server hopping")
             task.wait(getgenv().autoDigsiteConfig.SERVER_HOP_DELAY)
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/fdvll/pet-simulator-99/main/serverhop.lua"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Kingltnn/robloxx/main/serverhop.lua"))()
         end
     end)
 
@@ -93,7 +79,7 @@ end
 
 game:GetService("Workspace"):WaitForChild("ALWAYS_RENDERING"):Destroy()
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/fdvll/pet-simulator-99/main/cpuReducer.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Kingltnn/robloxx/main/cpuReducer.lua"))()
 
 
 while #game:GetService("Workspace").__THINGS.__INSTANCE_CONTAINER.Active.Digsite.Important.ActiveBlocks:GetChildren() < 5 do
@@ -140,7 +126,7 @@ while getgenv().autoDigsite do
     if not chest then
         if (os.clock() - noChestCount > getgenv().autoDigsiteConfig.NO_CHEST_SERVER_HOP) then
             task.wait(getgenv().autoDigsiteConfig.SERVER_HOP_DELAY)
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/fdvll/pet-simulator-99/main/serverhop.lua"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Kingltnn/robloxx/main/serverhop.lua"))()
         end
     else
         noChestCount = os.clock()
