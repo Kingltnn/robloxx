@@ -1,8 +1,8 @@
 -- MADE FIREDEVIL DO NOT SKID
-print("Made By firedevil (Ryan | 404678244215029762 | https://discord.gg/ettP4TjbAb)")
+print("| Made By KingLTN | Discord : king_ltnn |)")
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/fdvll/pet-simulator-99/main/waitForGameLoad.lua"))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/fdvll/pet-simulator-99/main/antiStaff.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Kingltnn/robloxx/main/waitForGameLoad.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Kingltnn/robloxx/main/antiStaff.lua"))()
 
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -146,7 +146,7 @@ while getgenv().autoBalloon do
                         if timeElapsed < getgenv().autoBalloonConfig.SERVER_MINIMUM_TIME then
                             task.wait(getgenv().autoBalloonConfig.SERVER_MINIMUM_TIME - timeElapsed)
                         end
-                        loadstring(game:HttpGet("https://raw.githubusercontent.com/fdvll/pet-simulator-99/main/serverhop.lua"))()
+                        loadstring(game:HttpGet("https://raw.githubusercontent.com/Kingltnn/robloxx/main/serverhop.lua)()
                     end
                     break
                 end
@@ -191,7 +191,7 @@ while getgenv().autoBalloon do
             if timeElapsed < getgenv().autoBalloonConfig.SERVER_MINIMUM_TIME then
                 task.wait(getgenv().autoBalloonConfig.SERVER_MINIMUM_TIME - timeElapsed)
             end
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/fdvll/pet-simulator-99/main/serverhop.lua"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Kingltnn/robloxx/main/serverhop.lua"))()
         end
 
         LocalPlayer.Character.HumanoidRootPart.Anchored = false
@@ -199,7 +199,7 @@ while getgenv().autoBalloon do
     end
 
     if (os.time() - startTimestamp) > getgenv().autoBalloonConfig.SERVER_MINIMUM_TIME then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/fdvll/pet-simulator-99/main/serverhop.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Kingltnn/robloxx/main/serverhop.lua"))()
     end
 end
 -- MADE FIREDEVIL DO NOT SKID
