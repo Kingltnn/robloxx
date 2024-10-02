@@ -9,7 +9,7 @@ getgenv().KiTTYWARE_Elemental = {
     Auto_Mail_Username = "",
 
     Only_Catch_Huges = true, -- If false will look for Huges, then Quest-Pets, then Easiest/Highest % Chance
-    Auto_Catch_Pets = fale,
+    Auto_Catch_Pets = true,
     Auto_Cube_Merchant = true,
 
     Discord_UserID = "",
