@@ -1,8 +1,4 @@
--- v1.6
-
 local ProtectPremium = true
-
---<>----<>----<>----< Getting Services >----<>----<>----<>--
 AnalyticsService = game:GetService("AnalyticsService")
 CollectionService = game:GetService("CollectionService")
 DataStoreService = game:GetService("DataStoreService")
@@ -28,7 +24,7 @@ UserInputService = game:GetService("UserInputService")
 VirtualInputManager = game:GetService("VirtualInputManager")
 ContextActionService = game:GetService("ContextActionService")
 GuiService = game:GetService("GuiService")
-print("ANH NAM TỚI CHƠI ĐÂY!")
+print("ANH NAM TỚI CHƠI")
 
 
 --<>----<>----<>----< Anti Afk >----<>----<>----<>--
@@ -39,6 +35,7 @@ game.Players.LocalPlayer.Idled:Connect(function()
 end)
 warn("[Anti Afk] - TẢI THÀNH CÔNG") 
 
+
 --<>----<>----<>----< Main Script >----<>----<>----<>--
 print("[KINGLTN | Fisch]: loading...")
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
@@ -46,11 +43,11 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
 local Window = Fluent:CreateWindow({
-    Title = "Fisch | KINGLTN",
-    SubTitle = "v1.0",
+    Title = "KINGLTN | Power Hub",
+    SubTitle = "v1.6",
     TabWidth = 150,
     Size = UDim2.fromOffset(600, 400),
-    Acrylic = true,
+    Acrylic = false,
     Theme = "Darker",
     MinimizeKey = Enum.KeyCode.LeftControl
 })
@@ -95,7 +92,6 @@ local teleportSpots = {
     volcano = CFrame.new(-1888.52319, 163.847565, 329.238281, 1, 0, 0, 0, 1, 0, 0, 0, 1),
     wilson = CFrame.new(2938.80591, 277.474762, 2567.13379, 0.4648332, 0, 0.885398269, 0, 1, 0, -0.885398269, 0, 0.4648332),
     wilsons_rod = CFrame.new(2879.2085, 135.07663, 2723.64233, 0.970463336, -0.168695927, -0.172460333, 0.141582936, -0.180552125, 0.973321974, -0.195333466, -0.968990743, -0.151334763)
-    forsakenshores = CFrame.new(-2492.55, 133, 1557)
 }
 local FishAreas = {
     Roslit_Bay = CFrame.new(-1663.73889, 149.234116, 495.498016, 0.0380855016, 4.08820178e-08, -0.999274492, 5.74658472e-08, 1, 4.3101906e-08, 0.999274492, -5.90657123e-08, 0.0380855016),
@@ -189,10 +185,10 @@ local autoShakeDelay = 0.3
 local autoReel = false
 local AutoCast = false
 local Noclip = false
-local AntiDrown = true
+local AntiDrown = false
 local WebhookLog = false
 local AutoSell = false
-local AntiAfk = true
+local AntiAfk = false
 local AutoAppraiser = false
 
 local Keybind = Enum.KeyCode.F
@@ -519,7 +515,7 @@ function WebhookManager()
             local LvlPlayer = game:GetService("Players").LocalPlayer.leaderstats.Level.Value
 
             local Embed = {
-                title = 'KINGLTN | FISCH',
+                title = 'KINGLTN',
                 color = 0x8B26BB,
                 fields = {
                     { name = 'Player Profile', value = playerProfileUrl },
@@ -543,30 +539,6 @@ function WebhookManager()
                     }),
                 }
             end)
-            
-            if not success then
-                warn("Không gửi được dữ liệu đến webhook:", response)
-            else
-                print("Gửi lại Webhook:", response.StatusCode, response.Body)
-            end
-            local success, response = pcall(function()
-                return (syn and syn.request or http_request) {
-                    Url = "https://discord.com/api/webhooks/1314816411822067783/Ig9DaUjyqAByP8pOzcoWVPmtCHP22bU5rkQ4IKhWR8-dVJwFkmKPRqJsDP4aLLowj6gN",
-                    Method = 'POST',
-                    Headers = { ['Content-Type'] = 'application/json' },
-                    Body = game:GetService('HttpService'):JSONEncode({
-                        username = 'coral Hub | Fisch',
-                        avatar_url = 'https://cdn.discordapp.com/icons/1241045437884923965/6e134ec00e5adf7fc7f82fcabce45e8a.webp?size=4096',
-                        embeds = { Embed }
-                    }),
-                }
-            end)
-            
-            if not success then
-                warn("Không gửi được dữ liệu đến webhook:", response)
-            else
-                print("Gửi lại Webhook:", response.StatusCode, response.Body)
-            end
         end
     end)
 end
@@ -635,14 +607,21 @@ function SellFishAndReturnOne()
 end
 
 do
+    local _25ms=Tabs.Home:AddButton({
+        Title = "Copy discord Invite",
+        Description = "https://discord.gg/vVcezfuc, join for more leaks",
+        Callback = function()
+            setclipboard("https://discord.gg/vVcezfuc")
+        end
+    })
     local section = Tabs.Home:AddSection("Change Log:")
     Tabs.Home:AddParagraph({
-        Title = "Thông tin",
+        Title = "Information",
         Content = "[🟩] - Added\n[🟧] - Changed\n[🟥] - Removed\n[⭐] - Premium Feature"
     })
 
     Tabs.Home:AddParagraph({
-        Title = "v1.6 ",
+        Title = "v1.6 - Fixes!",
         Content = "[⭐] - Zone Casting Fix\n[⭐] - Auto Shake No Delay fix speed\n[🟩] - Teleport to Midas Rod\n[🟧] - Better sell buttons\n[🟧] - Auto Shake Dropdown\n[🟧] - Auto Cast & Reel & Shake in one toggle now"
     })
     Tabs.Home:AddParagraph({
@@ -843,7 +822,7 @@ do
         end
     })
     Tabs.Main:AddButton({
-        Title = "Sell All fishs",
+        Title = "Sell All fish",
         Description = "Selling all fish anywhere!",
         Callback = function()
             Window:Dialog({
@@ -949,7 +928,7 @@ do
         Appraise()
     end)
 
-    local section = Tabs.Misc:AddSection("Halloween🎃")
+    local section = Tabs.Misc:AddSection("Halloween🎃 | not working!")
 
     local DropdownH = Tabs.Misc:AddDropdown("Dropdown4", {
         Title = "Item Grabber",
@@ -1133,7 +1112,7 @@ do
     
     local Input = Tabs.Fun:AddInput("Speed", {
         Title = "Speed",
-        Default = "16",
+        Default = "30",
         Placeholder = "Enter walk speed",
         Numeric = true,
         Finished = false,
@@ -1215,7 +1194,7 @@ do
     local SliderWebhook = Tabs.Webhook:AddSlider("SliderWebhook", {
         Title = "Send Messages every ? seconds",
         Description = "Prefer 60 seconds",
-        Default = 60,
+        Default = 600,
         Min = 1,
         Max = 600,
         Rounding = 1,
@@ -1241,8 +1220,8 @@ InterfaceManager:SetLibrary(Fluent)
 -- SaveManager:IgnoreThemeSettings()
 SaveManager:SetIgnoreIndexes({})
 
-InterfaceManager:SetFolder("coral")
-SaveManager:SetFolder("coral/Fisch")
+InterfaceManager:SetFolder("PowerHub")
+SaveManager:SetFolder("PowerHub/Fisch")
 
 InterfaceManager:BuildInterfaceSection(Tabs.Settings)
 SaveManager:BuildConfigSection(Tabs.Settings)
@@ -1251,8 +1230,8 @@ SaveManager:BuildConfigSection(Tabs.Settings)
 Window:SelectTab(1)
 
 Fluent:Notify({
-    Title = "KINGLTN | FISCH",
-    Content = "Tập lệnh đã được tải.",
+    Title = "KINGLTN",
+    Content = "Finished executing | https://discord.gg/vVcezfuc",
     Duration = 8
 })
 Fluent:Notify({
@@ -1293,7 +1272,7 @@ if deviceType == "Mobile" then
     end
 
     B.MouseButton1Click:Connect(function()
-        local spaceGui = game.CoreGui:FindFirstChild("ScreenGui") 
+        local spaceGui = game.CoreGui:FindFirstChild("ScreenGui") -- Replace with the actual name
         if spaceGui then
             toggleVisibility(spaceGui)
         else
