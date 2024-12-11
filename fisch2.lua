@@ -29,7 +29,7 @@ VirtualInputManager = game:GetService("VirtualInputManager")
 ContextActionService = game:GetService("ContextActionService")
 GuiService = game:GetService("GuiService")
 print("ANH NAM TỚI CHƠI ĐÂY!")
-Notifications:Notification("[🐟] ANH NAM ĐANG TỚI CHƠI!", 10, Library.Accent, false)
+
 
 --<>----<>----<>----< Anti Afk >----<>----<>----<>--
 game.Players.LocalPlayer.Idled:Connect(function()
