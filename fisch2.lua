@@ -24,26 +24,25 @@ UserInputService = game:GetService("UserInputService")
 VirtualInputManager = game:GetService("VirtualInputManager")
 ContextActionService = game:GetService("ContextActionService")
 GuiService = game:GetService("GuiService")
-print("ANH NAM TỚI CHƠI")
+print("ClientMonsterTools.lua loaded")
 
 
 --<>----<>----<>----< Anti Afk >----<>----<>----<>--
 game.Players.LocalPlayer.Idled:Connect(function()
     VirtualUser:CaptureController()
     VirtualUser:ClickButton2(Vector2.new())
-    print("Roblox cố gắng đá bạn nhưng tôi không để họ đá bạn :D")
+    print("Roblox Tried to kick you but we didn't let them kick you :D")
 end)
-warn("[Anti Afk] - TẢI THÀNH CÔNG") 
-
+warn("[Anti Afk] - loaded successfully") 
 
 --<>----<>----<>----< Main Script >----<>----<>----<>--
-print("[KINGLTN | Fisch]: loading...")
+print("[Power Hub | Fisch]: loading...")
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
 local Window = Fluent:CreateWindow({
-    Title = "KINGLTN | Power Hub",
+    Title = "Fisch | Power Hub",
     SubTitle = "v1.6",
     TabWidth = 150,
     Size = UDim2.fromOffset(600, 400),
@@ -94,30 +93,9 @@ local teleportSpots = {
     wilsons_rod = CFrame.new(2879.2085, 135.07663, 2723.64233, 0.970463336, -0.168695927, -0.172460333, 0.141582936, -0.180552125, 0.973321974, -0.195333466, -0.968990743, -0.151334763)
 }
 local FishAreas = {
-    Roslit_Bay = CFrame.new(-1663.73889, 149.234116, 495.498016, 0.0380855016, 4.08820178e-08, -0.999274492, 5.74658472e-08, 1, 4.3101906e-08, 0.999274492, -5.90657123e-08, 0.0380855016),
-    Ocean = CFrame.new(7665.104, 125.444443, 2601.59351, 0.999966085, -0.000609769544, -0.00821684115, 0.000612694537, 0.999999762, 0.000353460142, 0.00821662322, -0.000358482561, 0.999966204),
+    Roslit_Bay = CFrame.new( 20000 , 1336 , 5500),
+    Ocean = CFrame.new(20290 , 710 , 5643),
     Snowcap_Pond = CFrame.new(2778.09009, 283.283783, 2580.323, 1, 7.17688531e-09, -2.22843701e-05, -7.17796267e-09, 1, -4.83369114e-08, 2.22843701e-05, 4.83370712e-08, 1),
-    Moosewood_Docks = CFrame.new(343.2359924316406, 133.61595153808594, 267.0580139160156),
-    Deep_Ocean = CFrame.new(3569.07153, 125.480949, 6697.12695, 0.999980748, -0.00188910461, -0.00591362361, 0.00193980196, 0.999961317, 0.00857902411, 0.00589718809, -0.00859032944, 0.9999457),
-    Vertigo = CFrame.new(-137.697098, -736.86377, 1233.15271, 1, -1.61821543e-08, -2.01375751e-05, 1.6184277e-08, 1, 1.05423091e-07, 2.01375751e-05, -1.0542341e-07, 1),
-    Snowcap_Ocean = CFrame.new(3088.66699, 131.534332, 2587.11304, 1, 4.30694858e-09, -1.19097813e-14, -4.30694858e-09, 1, -2.80603398e-08, 1.17889275e-14, 2.80603398e-08, 1),
-    Harvesters_Spike = CFrame.new(-1234.61523, 125.228767, 1748.57166, 0.999991536, -0.000663080777, -0.00405627443, 0.000725277001, 0.999881923, 0.0153511297, 0.00404561637, -0.0153539423, 0.999873936),
-    SunStone = CFrame.new(-845.903992, 133.172211, -1163.57776, 1, -7.93465915e-09, -2.09446498e-05, 7.93544608e-09, 1, 3.75741536e-08, 2.09446498e-05, -3.75743205e-08, 1),
-    Roslit_Bay_Ocean = CFrame.new(-1708.09302, 155.000015, 384.928009, 1, -9.84460868e-09, -3.24939563e-15, 9.84460868e-09, 1, 4.66220271e-08, 2.79042003e-15, -4.66220271e-08, 1),
-    Moosewood_Pond = CFrame.new(509.735992, 152.000031, 302.173004, 1, -1.78487678e-08, -8.1329488e-14, 1.78487678e-08, 1, 8.45405168e-08, 7.98205428e-14, -8.45405168e-08, 1),
-    Terrapin_Ocean = CFrame.new(58.6469994, 135.499985, 2147.41699, 1, 2.09643041e-08, -5.6023784e-15, -2.09643041e-08, 1, -9.92988376e-08, 3.52064755e-15, 9.92988376e-08, 1),
-    Isonade = CFrame.new(-1060.99902, 121.164787, 953.996033, 0.999958456, 0.000633197487, -0.00909138657, -0.000568434712, 0.999974489, 0.00712434994, 0.00909566507, -0.00711888634, 0.999933302),
-    Moosewood_Ocean = CFrame.new(-167.642715, 125.19548, 248.009521, 0.999997199, -0.000432743778, -0.0023210498, 0.000467110571, 0.99988997, 0.0148265222, 0.00231437827, -0.0148275653, 0.999887407),
-    Roslit_Pond = CFrame.new(-1811.96997, 148.047089, 592.642517, 1, 1.12983072e-08, -2.16573972e-05, -1.12998171e-08, 1, -6.97014357e-08, 2.16573972e-05, 6.97016844e-08, 1),
-    Moosewood_Ocean_Mythical = CFrame.new(252.802994, 135.849625, 36.8839989, 1, -1.98115071e-08, -4.50667564e-15, 1.98115071e-08, 1, 1.22230617e-07, 2.08510289e-15, -1.22230617e-07, 1),
-    Terrapin_Olm = CFrame.new(22.0639992, 182.000015, 1944.36804, 1, 1.14953362e-08, -2.7011112e-15, -1.14953362e-08, 1, -7.09263972e-08, 1.88578841e-15, 7.09263972e-08, 1),
-    The_Arch = CFrame.new(1283.30896, 130.923569, -1165.29602, 1, -5.89772364e-09, -3.3183043e-15, 5.89772364e-09, 1, 3.63913486e-08, 3.10367822e-15, -3.63913486e-08, 1),
-    Scallop_Ocean = CFrame.new(23.2255898, 125.236847, 738.952271, 0.999990165, -0.00109633175, -0.00429760758, 0.00115595153, 0.999902785, 0.0138949333, 0.00428195624, -0.013899764, 0.999894202),
-    SunStone_Hidden = CFrame.new(-1139.55701, 134.62204, -1076.94324, 1, 3.9719481e-09, -1.6278158e-05, -3.97231048e-09, 1, -2.22651142e-08, 1.6278158e-05, 2.22651781e-08, 1),
-    Mushgrove_Stone = CFrame.new(2525.36011, 131.000015, -776.184021, 1, 1.90145943e-08, -3.24206519e-15, -1.90145943e-08, 1, -1.06596836e-07, 1.21516956e-15, 1.06596836e-07, 1),
-    Keepers_Altar = CFrame.new(1307.13599, -805.292236, -161.363998, 1, 2.40881981e-10, -3.25609947e-15, -2.40881981e-10, 1, -1.35044154e-09, 3.255774e-15, 1.35044154e-09, 1),
-    Lava = CFrame.new(-1959.86206, 193.144821, 271.960999, 1, -6.02453598e-09, -2.97388313e-15, 6.02453598e-09, 1, 3.37767716e-08, 2.77039384e-15, -3.37767716e-08, 1),
-    Roslit_Pond_Seaweed = CFrame.new(-1785.2869873046875, 148.15780639648438, 639.9299926757812),    
 }
 local racistPeople = {
     Witch = CFrame.new(409.638092, 134.451523, 311.403687, -0.74079144, 0, 0.671735108, 0, 1, 0, -0.671735108, 0, -0.74079144),
@@ -325,7 +303,7 @@ function ZoneCasting()
                             if selectedZone then
                                 local bobberPosition
                                 if selectedZoneCast == "FischFright24" then
-                                    bobberPosition = CFrame.new(selectedZone.Position.X, 126, selectedZone.Position.Z)
+                                    bobberPosition = CFrame.new(20000 , 1336 , 5500)
                                 elseif selectedZoneCast == "Isonade" then
                                     bobberPosition = CFrame.new(selectedZone.Position.X, 126, selectedZone.Position.Z)
                                 elseif selectedZoneCast == "Deep Ocean" then
@@ -382,10 +360,10 @@ function ZoneCasting()
                             end
                         end
                     else
-                        print("Không tìm thấy phao trong công cụ.")
+                        print("Bobber not found in the tool.")
                     end
                 else
-                    print("Không tìm thấy công cụ nào trong nhân vật.")
+                    print("No tool found in the character.")
                 end
             end
             task.wait(0.01)
@@ -515,7 +493,7 @@ function WebhookManager()
             local LvlPlayer = game:GetService("Players").LocalPlayer.leaderstats.Level.Value
 
             local Embed = {
-                title = 'KINGLTN',
+                title = 'Power Hub',
                 color = 0x8B26BB,
                 fields = {
                     { name = 'Player Profile', value = playerProfileUrl },
@@ -533,7 +511,7 @@ function WebhookManager()
                     Method = 'POST',
                     Headers = { ['Content-Type'] = 'application/json' },
                     Body = game:GetService('HttpService'):JSONEncode({
-                        username = 'KINGLTN | Fisch',
+                        username = 'Power Hub | Fisch',
                         avatar_url = 'https://cdn.discordapp.com/icons/1241045437884923965/6e134ec00e5adf7fc7f82fcabce45e8a.webp?size=4096',
                         embeds = { Embed }
                     }),
@@ -1112,7 +1090,7 @@ do
     
     local Input = Tabs.Fun:AddInput("Speed", {
         Title = "Speed",
-        Default = "30",
+        Default = "16",
         Placeholder = "Enter walk speed",
         Numeric = true,
         Finished = false,
@@ -1194,7 +1172,7 @@ do
     local SliderWebhook = Tabs.Webhook:AddSlider("SliderWebhook", {
         Title = "Send Messages every ? seconds",
         Description = "Prefer 60 seconds",
-        Default = 600,
+        Default = 60,
         Min = 1,
         Max = 600,
         Rounding = 1,
@@ -1230,7 +1208,7 @@ SaveManager:BuildConfigSection(Tabs.Settings)
 Window:SelectTab(1)
 
 Fluent:Notify({
-    Title = "KINGLTN",
+    Title = "Power Hub",
     Content = "Finished executing | https://discord.gg/vVcezfuc",
     Duration = 8
 })
