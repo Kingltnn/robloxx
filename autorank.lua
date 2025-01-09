@@ -15,6 +15,6 @@ getgenv().Config = {
 
     ["FPSBooster"] = true, -- REPORT NO SCRIPT BUGS.
     ["UltraFPS"] = true, -- I WILL BAN YOU IF YOU REPORT ANY SCRIPT BUGS.
-    ["Webhook"] = "https://discord.com/api/webhooks/1324699447296397393/uX_0uwDbsTIN0hRDE4DhFOxKOEajIRYX-stceXAG53jbvETJI1WasyOeMpALHiq7OSEf", -- DO NOT REPORT ANY SCRIPT BUGS. WE KNOW ITS BUGGED.
+    ["Webhook"] = "https://discord.com/api/webhooks/1326777560947757076/aW0lAINHY0Exfuax-JmRle7vZgzWnHGxIXolwQJy4pe6EoSJwTy9OuICeCqPK0y3QteV", -- DO NOT REPORT ANY SCRIPT BUGS. WE KNOW ITS BUGGED.
 }
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/177d65e916988f4b84dd21ed33a2aa91.lua"))()
