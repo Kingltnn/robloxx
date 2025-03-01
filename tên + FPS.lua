@@ -10,7 +10,7 @@ screenGui.Parent = game.CoreGui
 screenGui.DisplayOrder = 1000000000000000000
 
 textLabel.Parent = screenGui
-textLabel.Size = UDim2.new(0, 300, 0, 50)
+textLabel.Size = UDim2.new(0, 250, 0, 40)
 textLabel.Position = UDim2.new(0, 10, 0, 10)
 textLabel.Font = Enum.Font.FredokaOne
 textLabel.TextScaled = true
